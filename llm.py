@@ -1,4 +1,3 @@
-# content_summarizer.py
 from openai import OpenAI
 
 client = OpenAI()
@@ -27,7 +26,7 @@ def summarize_query(search_query):
 
 def summarize_content(content, search_term, character_limit=500):
     prompt = (
-        f"You are an AI assistant tasked with summarizing content relevant to '{search_term}'. "
+        f"You are an AI assistant tasked with summarizing content relevant to '{search_term}'."
         f"Please provide a concise summary in {character_limit} characters or less."
     )
     summarized_content = response(prompt, content)

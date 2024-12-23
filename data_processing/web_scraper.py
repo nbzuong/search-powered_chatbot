@@ -13,7 +13,7 @@ def retrieve_content(url, max_tokens=TRUNCATE_SCRAPED_TEXT):
             script_or_style.decompose()
 
         text = soup.get_text(separator=' ', strip=True)
-        characters = max_tokens * 4  # Approximate conversion
+        characters = max_tokens * 4
         text = text[:characters]
         return text
     except requests.exceptions.RequestException as e:

@@ -1,5 +1,5 @@
 import requests
-from data_processing.llm import summarize_content
+from llm import summarize_content
 from data_processing.web_scraper import retrieve_content
 
 def search(search_item, api_key, cse_id, search_depth=10, site_filter=None):
@@ -50,10 +50,10 @@ def get_search_results(search_items, search_term, character_limit=500):
         else:
             summary = summarize_content(web_content, search_term, character_limit)
             result_dict = {
-                'order': idx,
-                'link': url,
+                'id': idx,
+                'url': url,
                 'title': snippet,
-                'Summary': summary
+                'summary': summary
             }
             results_list.append(result_dict)
     return results_list
