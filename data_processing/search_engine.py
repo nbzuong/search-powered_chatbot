@@ -1,5 +1,5 @@
 import requests
-from llm import summarize_content
+from data_processing.llm_prompting import summarize_content
 from data_processing.web_scraper import retrieve_content
 
 def search(search_item, api_key, cse_id, search_depth=10, site_filter=None):
